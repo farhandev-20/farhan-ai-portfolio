@@ -169,9 +169,9 @@ const BOT_TEMPLATES = {
       </div>
 
       <div class="contact-social-row">
-        <a href="https://linkedin.com/in/farhanattar" target="_blank" rel="noopener noreferrer" class="contact-social-link">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/farhan-attar-966408343/" target="_blank" rel="noopener noreferrer" class="contact-social-link">LinkedIn</a>
         <a href="https://github.com/farhandev-20" target="_blank" rel="noopener noreferrer" class="contact-social-link">GitHub</a>
-        <a href="https://interviewai-ulkr.onrender.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">Portfolio</a>
+        <a href="https://farhan-ai-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" class="contact-social-link">Portfolio</a>
       </div>
     </div>
   `,
@@ -203,7 +203,7 @@ const BOT_TEMPLATES = {
 
       <div class="resume-file-actions">
         <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-btn-pill btn-open" title="Open PDF in new tab">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
@@ -211,12 +211,12 @@ const BOT_TEMPLATES = {
         </a>
 
         <a href="resume.pdf" download="Farhan_Attar_Resume.pdf" class="resume-btn-pill btn-dl" title="Download Resume PDF">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span>Download (84 KB)</span>
+          <span>Download</span>
         </a>
       </div>
     </div>

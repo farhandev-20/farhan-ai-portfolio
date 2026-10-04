@@ -38,4 +38,5 @@ An Apple-inspired, minimalist, conversational AI portfolio web application for *
 - **Email:** [attarfarhan02@gmail.com](mailto:attarfarhan02@gmail.com)
 - **Phone:** +91 9325147865
 - **GitHub:** [@farhandev-20](https://github.com/farhandev-20)
-- **LinkedIn:** [Farhan Attar](https://linkedin.com/in/farhanattar)
+- **LinkedIn:** [Farhan Attar](https://www.linkedin.com/in/farhan-attar-966408343/)
+- **Live Portfolio:** [farhan-ai-portfolio.vercel.app](https://farhan-ai-portfolio.vercel.app/)
