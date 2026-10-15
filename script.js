@@ -26,13 +26,122 @@ const BOT_TEMPLATES = {
           <div class="about-sub-location">Computer Engineering Student • Barshi, Maharashtra</div>
           <p class="about-story-text">
             Hey 👋<br>
-            I'm Farhan, a Computer Engineering student (2023–2027) at <b>Bhagwant Institute of Technology, Barshi</b> with a CGPA of <b>7.33/10</b>. I have hands-on experience in software and web application development, database management, and completed a UI/UX internship at <b>Satyra IT LLP</b>.
+            I'm Farhan, a Computer Engineering student (2023–2027) at <b>Bhagwant Institute of Technology, Barshi</b> with a CGPA of <b>7.33/10</b>. I have hands-on experience in software and web application development, database management, and industry internships including <b>UI/UX Design Intern at Satyra IT LLP</b> and currently <b>Data Analyst Intern at Bluestock Fintech</b>.
           </p>
           <div class="about-blue-pills">
             <span class="pill-blue">Python</span>
+            <span class="pill-blue">Data Analysis</span>
             <span class="pill-blue">Web Development</span>
             <span class="pill-blue">UI/UX Design</span>
             <span class="pill-blue">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  // WORK EXPERIENCE (Internships & Industry Roles)
+  experience: () => `
+    <div class="bot-card experience-card">
+      <div class="experience-header">
+        <div>
+          <h2 class="card-main-title">Work Experience</h2>
+          <div class="experience-sub-title">Industry Roles • Data Analytics & Product UI/UX Design</div>
+        </div>
+        <span class="experience-badge-count">2 Positions</span>
+      </div>
+
+      <div class="experience-timeline">
+        <!-- Role 1: Data Analyst Intern at Bluestock Fintech (Current) -->
+        <div class="exp-item exp-item-active">
+          <div class="exp-item-top">
+            <div class="exp-role-group">
+              <div class="exp-icon-box exp-icon-fintech">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <div>
+                <div class="exp-role-title">Data Analyst Intern</div>
+                <div class="exp-company-name">Bluestock Fintech</div>
+              </div>
+            </div>
+            <div class="exp-badge-period">
+              <span class="status-pill status-active">
+                <span class="pulse-dot-green"></span> Current Role
+              </span>
+              <span class="exp-date-text">Sep 2026 – Present</span>
+            </div>
+          </div>
+
+          <div class="exp-meta-bar">
+            <span class="exp-domain-tag">Fintech</span>
+            <span class="exp-domain-tag">Data Analytics</span>
+            <span class="exp-domain-tag">Financial Datasets</span>
+          </div>
+
+          <ul class="exp-bullet-list">
+            <li>Analyzing financial datasets, stock market indicators, and platform metrics to extract actionable business intelligence.</li>
+            <li>Building analytical queries and data transformations using Python and SQL to monitor user engagement trends and performance tracking.</li>
+            <li>Designing intuitive KPI dashboards, tracking charts, and structured reporting summaries for fintech stakeholders.</li>
+            <li>Collaborating with engineering and product teams to validate data accuracy, streamline ETL processes, and support data-backed decision-making.</li>
+          </ul>
+
+          <div class="exp-skills-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">SQL</span>
+            <span class="exp-tag">Data Analysis</span>
+            <span class="exp-tag">Financial Analytics</span>
+            <span class="exp-tag">KPI Dashboards</span>
+            <span class="exp-tag">Fintech</span>
+          </div>
+        </div>
+
+        <!-- Role 2: UI/UX Design Intern at Satyra IT LLP (Completed) -->
+        <div class="exp-item">
+          <div class="exp-item-top">
+            <div class="exp-role-group">
+              <div class="exp-icon-box exp-icon-design">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <div>
+                <div class="exp-role-title">UI/UX Design Intern</div>
+                <div class="exp-company-name">Satyra IT LLP</div>
+              </div>
+            </div>
+            <div class="exp-badge-period">
+              <span class="status-pill status-completed">Completed</span>
+              <span class="exp-date-text">May 2026 – Aug 2026</span>
+            </div>
+          </div>
+
+          <div class="exp-meta-bar">
+            <span class="exp-domain-tag">IT Solutions</span>
+            <span class="exp-domain-tag">UI/UX & Product Design</span>
+            <span class="exp-domain-tag">Web Layouts</span>
+          </div>
+
+          <ul class="exp-bullet-list">
+            <li>Designed responsive web interfaces and user-focused layouts, applying usability and visual consistency principles to project requirements.</li>
+            <li>Created wireframes and interactive prototypes in Figma to define page structure, interface elements, and user flows before implementation.</li>
+            <li>Collaborated with mentors to identify usability issues and refine interface layouts for clearer navigation and interaction.</li>
+            <li>Applied responsive design principles to adapt web interfaces across desktop and mobile screen sizes.</li>
+          </ul>
+
+          <div class="exp-skills-tags">
+            <span class="exp-tag">Figma</span>
+            <span class="exp-tag">UI/UX Design</span>
+            <span class="exp-tag">Wireframing</span>
+            <span class="exp-tag">Interactive Prototyping</span>
+            <span class="exp-tag">Responsive Design</span>
+            <span class="exp-tag">Usability Testing</span>
           </div>
         </div>
       </div>
@@ -308,7 +417,23 @@ function matchQueryTopic(text) {
   if (q === "me" || q.includes("who is") || q.includes("about") || q.includes("bio") || q.includes("story") || q.includes("background")) {
     return "me";
   }
-  if (q === "projects" || q.includes("project") || q.includes("work") || q.includes("built") || q.includes("interview") || q.includes("ecommerce") || q.includes("parking")) {
+  if (
+    q === "experience" ||
+    q === "internship" ||
+    q === "internships" ||
+    q === "work" ||
+    q.includes("experience") ||
+    q.includes("intern") ||
+    q.includes("bluestock") ||
+    q.includes("satyra") ||
+    q.includes("company") ||
+    q.includes("job") ||
+    q.includes("career") ||
+    q.includes("work history")
+  ) {
+    return "experience";
+  }
+  if (q === "projects" || q.includes("project") || q.includes("built") || q.includes("interview") || q.includes("ecommerce") || q.includes("parking")) {
     return "projects";
   }
   if (q === "skills" || q.includes("skill") || q.includes("tech") || q.includes("stack") || q.includes("python") || q.includes("javascript") || q.includes("sql") || q.includes("database")) {
@@ -330,17 +455,6 @@ function matchQueryTopic(text) {
 // 3. Fallback generic answer generator
 function getGenericAnswer(query) {
   const q = query.toLowerCase();
-
-  if (q.includes("intern") || q.includes("satyra") || q.includes("experience")) {
-    return `
-      <div class="generic-bot-bubble">
-        <strong>UI/UX Design Intern at Satyra IT LLP</strong> (May 2026 – Aug 2026)<br><br>
-        • Designed responsive web interfaces and user-focused layouts in Figma.<br>
-        • Created wireframes and interactive prototypes to define clear user flows.<br>
-        • Collaborated with mentors to refine usability and adapt interfaces across desktop and mobile screens.
-      </div>
-    `;
-  }
 
   if (q.includes("education") || q.includes("college") || q.includes("cgpa") || q.includes("degree")) {
     return `
@@ -367,9 +481,10 @@ function getGenericAnswer(query) {
 
   return `
     <div class="generic-bot-bubble">
-      Farhan Attar is a Computer Engineering student (2027 Batch) and Software Developer with experience in Python, Web Applications, MySQL/DBMS, and UI/UX Design.<br><br>
+      Farhan Attar is a Computer Engineering student (2027 Batch) and Software Developer with experience in Python, Web Applications, MySQL/DBMS, Data Analytics, and UI/UX Design.<br><br>
       You can explore:<br>
-      • <strong>Me:</strong> Background, education & internship<br>
+      • <strong>Me:</strong> Background & education<br>
+      • <strong>Experience:</strong> Bluestock Fintech & Satyra IT LLP internships<br>
       • <strong>Projects:</strong> AI Interview Coach, E-Commerce, Smart Parking<br>
       • <strong>Skills:</strong> Python, JavaScript, SQL, HTML/CSS, MongoDB, Figma<br>
       • <strong>Contact:</strong> Email, Phone & Socials<br>
@@ -544,6 +659,7 @@ function handleSelectTopic(topicKey, userQueryText) {
   // Display Title label in user bubble
   const topicTitles = {
     me: "Me",
+    experience: "Work Experience",
     projects: "My Projects",
     skills: "Skills & Expertise",
     contact: "Contact Information",

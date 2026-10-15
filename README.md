@@ -7,7 +7,7 @@ An Apple-inspired, minimalist, conversational AI portfolio web application for *
 ## ✨ Highlights & Features
 
 - **🍎 Minimal Apple Aesthetic:** Clean typography, glassmorphism cards, and fluid cursor background.
-- **💬 Interactive Chatbot Engine:** Instant answers for *Me*, *Projects*, *Skills*, *Contact*, *Location*, and *Resume*.
+- **💬 Interactive Chatbot Engine:** Instant answers for *Me*, *Experience*, *Projects*, *Skills*, *Contact*, *Location*, and *Resume*.
 - **🎯 Intelligent Focus Navigation:** Automatically focuses on newly opened answers with smooth, offset scrolling.
 - **🛰️ Real Earth Satellite View:** Integrated high-resolution satellite imagery (Esri World Imagery) with cinematic fly-in from space down to Barshi, Maharashtra (`18.2329° N, 75.6953° E`).
 - **📄 Direct PDF Resume Download:** Instant viewing and downloading of verified official resume (`Farhan_Attar_Resume.pdf`).

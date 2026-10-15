@@ -253,12 +253,12 @@ html, body {
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.09));
 }
 
-/* Navigation Cards Grid (Initial Hero View) */
+/* Navigation Cards Grid (Initial Hero View - 7 Cards) */
 .nav-cards-container {
   width: 100%;
-  max-width: 600px;
-  display: grid;
-  grid-template-columns: repeat(5, 108px);
+  max-width: 520px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
 }
@@ -278,11 +278,6 @@ html, body {
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
   transition: all 0.25s var(--transition-smooth);
-}
-
-/* On desktop, center the 6th card (Resume) under the 5 cards */
-.nav-card[data-topic="resume"] {
-  grid-column: 3;
 }
 
 .nav-card:hover {
@@ -1215,6 +1210,217 @@ html, body {
   text-decoration: underline;
 }
 
+/* ============================================================
+   WORK EXPERIENCE COMPONENT STYLES
+   ============================================================ */
+.experience-card {
+  padding: 28px 32px;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.experience-sub-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.experience-badge-count {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--blue-accent);
+  background: rgba(0, 113, 227, 0.08);
+  border: 1px solid rgba(0, 113, 227, 0.2);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  letter-spacing: -0.01em;
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.exp-item {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 22px 24px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+.exp-item:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.exp-item.exp-item-active {
+  border-color: #bae6fd;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.06);
+}
+
+.exp-item.exp-item-active:hover {
+  border-color: #7dd3fc;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.12);
+}
+
+.exp-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.exp-role-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.exp-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exp-icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.exp-icon-fintech {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.exp-icon-design {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+.exp-role-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+}
+
+.exp-company-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--blue-accent);
+  margin-top: 1px;
+}
+
+.exp-badge-period {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  letter-spacing: -0.01em;
+}
+
+.status-pill.status-active {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.status-pill.status-completed {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.exp-date-text {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.exp-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.exp-domain-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.exp-bullet-list {
+  margin: 0 0 14px 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-bullet-list li {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.exp-bullet-list li::marker {
+  color: var(--blue-accent);
+}
+
+.exp-skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.exp-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
 /* Generic Fallback Bot Text Bubble */
 .generic-bot-bubble {
   background: #f8f8fa;
@@ -1430,17 +1636,18 @@ html, body {
     margin: 4px 0 16px;
   }
 
-  /* Overview 6 Cards arranged in clean touch-friendly 3x2 grid on mobile */
+  /* Overview 7 Cards arranged in clean touch-friendly 3-col grid on mobile */
   .nav-cards-container {
     width: 100%;
     max-width: 360px;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin: 0 auto;
   }
 
   .nav-card[data-topic="resume"] {
-    grid-column: auto; /* Placed cleanly in 3rd col of row 2 */
+    grid-column: 2; /* Centered in 3rd row */
   }
 
   .nav-card {
@@ -1468,6 +1675,53 @@ html, body {
   .bot-card {
     padding: 20px 16px;
     border-radius: 22px;
+  }
+
+  /* Experience Card Mobile Adaptation */
+  .experience-card {
+    padding: 20px 16px;
+  }
+
+  .experience-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+
+  .exp-item {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  .exp-item-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .exp-badge-period {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 6px;
+    border-top: 1px dashed #e2e8f0;
+  }
+
+  .exp-role-title {
+    font-size: 15.5px;
+  }
+
+  .exp-company-name {
+    font-size: 13px;
+  }
+
+  .exp-bullet-list {
+    margin: 0 0 12px 14px;
+    gap: 7px;
+  }
+
+  .exp-bullet-list li {
+    font-size: 12.5px;
   }
 
   /* Resume File Card Mobile Optimization */
