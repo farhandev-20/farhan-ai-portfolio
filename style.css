@@ -1451,6 +1451,261 @@ html, body {
   border-radius: 9999px;
 }
 
+/* ============================================================
+   CONTACT SECTION STYLING (Apple-Grade Interactive Cards)
+   ============================================================ */
+.contact-card {
+  padding: 28px 32px;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-sub-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.contact-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #059669;
+  letter-spacing: -0.01em;
+}
+
+.contact-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.contact-interactive-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+.contact-interactive-row:hover:not(.contact-static-row) {
+  border-color: var(--blue-accent);
+  background: #fafcff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.08);
+}
+
+.contact-row-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon-box svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-icon-email {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.22);
+}
+
+.contact-icon-phone {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.22);
+}
+
+.contact-icon-loc {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.22);
+}
+
+.contact-info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.contact-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.contact-hint {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.contact-action-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.contact-arrow-svg {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.2s ease;
+}
+
+.contact-interactive-row:hover .contact-action-badge {
+  background: var(--blue-accent);
+  border-color: var(--blue-accent);
+  color: #ffffff;
+}
+
+.contact-interactive-row:hover .contact-arrow-svg {
+  transform: translate(2px, -2px);
+}
+
+.contact-sub-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+/* Social & Professional Links Grid */
+.contact-social-section {
+  padding-top: 18px;
+  border-top: 1px solid var(--border-color);
+}
+
+.contact-social-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.contact-social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.contact-social-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.social-brand-svg {
+  width: 16px;
+  height: 16px;
+}
+
+.social-ext-arrow {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contact-social-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.contact-social-card:hover .social-ext-arrow {
+  transform: translate(1px, -1px);
+}
+
+.contact-social-card.link-linkedin:hover {
+  border-color: #0a66c2;
+  color: #0a66c2;
+  background: #f0f7ff;
+}
+
+.contact-social-card.link-github:hover {
+  border-color: #111111;
+  color: #ffffff;
+  background: #111111;
+}
+
+.contact-social-card.link-github:hover .social-ext-arrow {
+  color: #ffffff;
+}
+
+.contact-social-card.link-portfolio:hover {
+  border-color: var(--blue-accent);
+  color: var(--blue-accent);
+  background: #f0f7ff;
+}
+
 /* Generic Fallback Bot Text Bubble */
 .generic-bot-bubble {
   background: #f8f8fa;
@@ -1752,6 +2007,51 @@ html, body {
 
   .exp-bullet-list li {
     font-size: 12.5px;
+  }
+
+  /* Contact Card Mobile Adaptation */
+  .contact-card {
+    padding: 20px 16px;
+  }
+
+  .contact-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .contact-interactive-row {
+    padding: 14px 14px;
+    border-radius: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contact-row-left {
+    width: 100%;
+  }
+
+  .contact-action-badge {
+    align-self: flex-end;
+    font-size: 11.5px;
+    padding: 5px 10px;
+  }
+
+  .contact-sub-tag {
+    align-self: flex-start;
+  }
+
+  .contact-value {
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  .contact-social-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   /* Resume File Card Mobile Optimization */

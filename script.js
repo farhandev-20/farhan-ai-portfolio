@@ -297,36 +297,115 @@ const BOT_TEMPLATES = {
     </div>
   `,
 
-  // SCREENSHOT 1: CONTACT INFORMATION
+  // CONTACT INFORMATION (Apple-grade interactive card)
   contact: () => `
-    <div class="bot-card">
+    <div class="bot-card contact-card">
       <div class="contact-header">
-        <h2 class="card-main-title">Contact Information</h2>
-        <span class="contact-handle">@farhandev-20</span>
-      </div>
-
-      <div class="contact-list">
-        <a href="mailto:attarfarhan02@gmail.com" class="contact-item" title="Click to send email">
-          <span class="contact-item-icon">✉️</span>
-          <span>attarfarhan02@gmail.com</span>
-          <span class="contact-arrow">&gt;</span>
-        </a>
-
-        <a href="tel:+919325147865" class="contact-item" title="Click to call">
-          <span class="contact-item-icon">📞</span>
-          <span>+91 9325147865</span>
-        </a>
-
-        <div class="contact-item">
-          <span class="contact-item-icon">📍</span>
-          <span>Barshi, Maharashtra, India</span>
+        <div>
+          <h2 class="card-main-title">Contact Information</h2>
+          <div class="contact-sub-title">Let's connect & discuss software engineering opportunities</div>
+        </div>
+        <div class="contact-status-badge">
+          <span class="pulse-dot-green"></span>
+          <span>Open to Opportunities</span>
         </div>
       </div>
 
-      <div class="contact-social-row">
-        <a href="https://www.linkedin.com/in/farhan-attar-966408343/" target="_blank" rel="noopener noreferrer" class="contact-social-link">LinkedIn</a>
-        <a href="https://github.com/farhandev-20" target="_blank" rel="noopener noreferrer" class="contact-social-link">GitHub</a>
-        <a href="https://farhan-ai-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" class="contact-social-link">Portfolio</a>
+      <div class="contact-cards-list">
+        <!-- Email Item -->
+        <a href="mailto:attarfarhan02@gmail.com" class="contact-interactive-row" title="Send email to Farhan">
+          <div class="contact-row-left">
+            <div class="contact-icon-box contact-icon-email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <div class="contact-info-text">
+              <div class="contact-label">Email Address</div>
+              <div class="contact-value">attarfarhan02@gmail.com</div>
+            </div>
+          </div>
+          <span class="contact-action-badge">
+            <span>Send Email</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="contact-arrow-svg">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Phone Item -->
+        <a href="tel:+919325147865" class="contact-interactive-row" title="Call Farhan">
+          <div class="contact-row-left">
+            <div class="contact-icon-box contact-icon-phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="contact-info-text">
+              <div class="contact-label">Phone & WhatsApp</div>
+              <div class="contact-value">+91 9325147865</div>
+            </div>
+          </div>
+          <span class="contact-action-badge">
+            <span>Call Now</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="contact-arrow-svg">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Location Item -->
+        <div class="contact-interactive-row contact-static-row">
+          <div class="contact-row-left">
+            <div class="contact-icon-box contact-icon-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="contact-info-text">
+              <div class="contact-label">Location Base</div>
+              <div class="contact-value">Barshi, Maharashtra, India</div>
+              <div class="contact-hint">Open to Relocation (Pune, Mumbai, Bangalore, Hyderabad) & Remote</div>
+            </div>
+          </div>
+          <span class="contact-sub-tag">IST (UTC+5:30)</span>
+        </div>
+      </div>
+
+      <!-- Social Links Row -->
+      <div class="contact-social-section">
+        <div class="contact-social-label">Profiles & Links:</div>
+        <div class="contact-social-grid">
+          <a href="https://www.linkedin.com/in/farhan-attar-966408343/" target="_blank" rel="noopener noreferrer" class="contact-social-card link-linkedin" title="Farhan on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="social-brand-svg">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 0 0 1.54-1.53c0-.85-.69-1.54-1.54-1.54a1.54 1.54 0 0 0-1.54 1.54c0 .84.69 1.53 1.54 1.53m1.39 9.74v-8.37H5.07v8.37h2.78z"></path>
+            </svg>
+            <span>LinkedIn</span>
+            <span class="social-ext-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/farhandev-20" target="_blank" rel="noopener noreferrer" class="contact-social-card link-github" title="Farhan on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="social-brand-svg">
+              <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path>
+            </svg>
+            <span>GitHub</span>
+            <span class="social-ext-arrow">↗</span>
+          </a>
+
+          <a href="https://farhan-ai-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" class="contact-social-card link-portfolio" title="Live Portfolio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-brand-svg">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Portfolio</span>
+            <span class="social-ext-arrow">↗</span>
+          </a>
+        </div>
       </div>
     </div>
   `,
