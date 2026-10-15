@@ -1306,10 +1306,16 @@ html, body {
   height: 22px;
 }
 
-.exp-icon-fintech {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+.exp-icon-python {
+  background: linear-gradient(135deg, #0284c7 0%, #1e40af 100%);
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.exp-icon-fintech {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
 .exp-icon-design {

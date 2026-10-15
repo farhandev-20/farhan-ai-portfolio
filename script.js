@@ -26,7 +26,7 @@ const BOT_TEMPLATES = {
           <div class="about-sub-location">Computer Engineering Student • Barshi, Maharashtra</div>
           <p class="about-story-text">
             Hey 👋<br>
-            I'm Farhan, a Computer Engineering student (2023–2027) at <b>Bhagwant Institute of Technology, Barshi</b> with a CGPA of <b>7.33/10</b>. I have hands-on experience in software and web application development, database management, and industry internships including <b>UI/UX Design Intern at Satyra IT LLP</b> and currently <b>Data Analyst Intern at Bluestock Fintech</b>.
+            I'm Farhan, a Computer Engineering student (2023–2027) at <b>Bhagwant Institute of Technology, Barshi</b> with a CGPA of <b>7.33/10</b>. I have hands-on experience in software and web application development, database management, and industry internships including <b>Python Developer Intern at Kiran Academy</b>, <b>Data Analyst Intern at Bluestock Fintech</b>, and <b>UI/UX Design Intern at Satyra IT LLP</b>.
           </p>
           <div class="about-blue-pills">
             <span class="pill-blue">Python</span>
@@ -46,13 +46,59 @@ const BOT_TEMPLATES = {
       <div class="experience-header">
         <div>
           <h2 class="card-main-title">Work Experience</h2>
-          <div class="experience-sub-title">Industry Roles • Data Analytics & Product UI/UX Design</div>
+          <div class="experience-sub-title">Industry Roles • Python Development, Data Analytics & UI/UX Design</div>
         </div>
-        <span class="experience-badge-count">2 Positions</span>
+        <span class="experience-badge-count">3 Positions</span>
       </div>
 
       <div class="experience-timeline">
-        <!-- Role 1: Data Analyst Intern at Bluestock Fintech (Current) -->
+        <!-- Role 1: Python Developer Intern at Kiran Academy (Current) -->
+        <div class="exp-item exp-item-active">
+          <div class="exp-item-top">
+            <div class="exp-role-group">
+              <div class="exp-icon-box exp-icon-python">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="exp-role-title">Python Developer Intern</div>
+                <div class="exp-company-name">Kiran Academy - Java By Kiran</div>
+              </div>
+            </div>
+            <div class="exp-badge-period">
+              <span class="status-pill status-active">
+                <span class="pulse-dot-green"></span> Current Role
+              </span>
+              <span class="exp-date-text">Sep 2026 – Present</span>
+            </div>
+          </div>
+
+          <div class="exp-meta-bar">
+            <span class="exp-domain-tag">Python Development</span>
+            <span class="exp-domain-tag">Backend & APIs</span>
+            <span class="exp-domain-tag">Software Engineering</span>
+          </div>
+
+          <ul class="exp-bullet-list">
+            <li>Developing modular Python applications, backend logic, and automation scripts following clean coding and OOP principles.</li>
+            <li>Designing and executing database queries, CRUD workflows, and REST API integrations using Python and SQL/DBMS.</li>
+            <li>Implementing algorithmic problem solving, debugging software modules, and optimizing application performance.</li>
+            <li>Collaborating in team sprints to build scalable code modules, conduct code reviews, and test software solutions.</li>
+          </ul>
+
+          <div class="exp-skills-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Backend Development</span>
+            <span class="exp-tag">REST APIs</span>
+            <span class="exp-tag">MySQL</span>
+            <span class="exp-tag">OOP</span>
+            <span class="exp-tag">Problem Solving</span>
+          </div>
+        </div>
+
+        <!-- Role 2: Data Analyst Intern at Bluestock Fintech (Current) -->
         <div class="exp-item exp-item-active">
           <div class="exp-item-top">
             <div class="exp-role-group">
@@ -424,6 +470,8 @@ function matchQueryTopic(text) {
     q === "work" ||
     q.includes("experience") ||
     q.includes("intern") ||
+    q.includes("kiran") ||
+    q.includes("java by kiran") ||
     q.includes("bluestock") ||
     q.includes("satyra") ||
     q.includes("company") ||
@@ -484,7 +532,7 @@ function getGenericAnswer(query) {
       Farhan Attar is a Computer Engineering student (2027 Batch) and Software Developer with experience in Python, Web Applications, MySQL/DBMS, Data Analytics, and UI/UX Design.<br><br>
       You can explore:<br>
       • <strong>Me:</strong> Background & education<br>
-      • <strong>Experience:</strong> Bluestock Fintech & Satyra IT LLP internships<br>
+      • <strong>Experience:</strong> Kiran Academy, Bluestock Fintech & Satyra IT LLP internships<br>
       • <strong>Projects:</strong> AI Interview Coach, E-Commerce, Smart Parking<br>
       • <strong>Skills:</strong> Python, JavaScript, SQL, HTML/CSS, MongoDB, Figma<br>
       • <strong>Contact:</strong> Email, Phone & Socials<br>
