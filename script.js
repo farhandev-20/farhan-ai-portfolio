@@ -541,21 +541,72 @@ function getGenericAnswer(query) {
   `;
 }
 
-// 4. Intelligent Navigation & Dynamic Focus Engine
+// 4. Intelligent Navigation & Dynamic Focus Engine (ChatGPT-style auto-scroll & focus)
+let activeScrollAnimId = null;
+
+function getElementDocumentTop(element) {
+  if (!element) return 0;
+  let top = 0;
+  let curr = element;
+  while (curr) {
+    top += curr.offsetTop;
+    curr = curr.offsetParent;
+  }
+  return top;
+}
+
+function smoothScrollToPosition(targetY, duration = 460, callback) {
+  if (activeScrollAnimId) {
+    cancelAnimationFrame(activeScrollAnimId);
+    activeScrollAnimId = null;
+  }
+
+  const maxScroll = Math.max(
+    0,
+    document.documentElement.scrollHeight - window.innerHeight
+  );
+  const clampedTargetY = Math.max(0, Math.min(targetY, maxScroll));
+  const startY = window.pageYOffset || document.documentElement.scrollTop;
+  const distance = clampedTargetY - startY;
+
+  if (Math.abs(distance) < 2) {
+    window.scrollTo(0, clampedTargetY);
+    if (callback) callback();
+    return;
+  }
+
+  const startTime = performance.now();
+
+  function animate(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(1, elapsed / duration);
+    // Smooth easeOutCubic curve (fast start, silky deceleration)
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const currentY = startY + distance * ease;
+
+    window.scrollTo(0, currentY);
+
+    if (progress < 1) {
+      activeScrollAnimId = requestAnimationFrame(animate);
+    } else {
+      window.scrollTo(0, clampedTargetY);
+      activeScrollAnimId = null;
+      if (callback) callback();
+    }
+  }
+
+  activeScrollAnimId = requestAnimationFrame(animate);
+}
+
 function focusNewContent(targetElement, options = {}) {
   if (!targetElement) return;
   const offset = options.offset !== undefined ? options.offset : 65;
-  const behavior = options.behavior || "smooth";
+  const duration = options.duration || 460;
 
   requestAnimationFrame(() => {
-    const rect = targetElement.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const targetY = Math.max(0, scrollTop + rect.top - offset);
-
-    window.scrollTo({
-      top: targetY,
-      behavior: behavior
-    });
+    const docTop = getElementDocumentTop(targetElement);
+    const targetY = Math.max(0, docTop - offset);
+    smoothScrollToPosition(targetY, duration, options.callback);
   });
 }
 
@@ -693,7 +744,7 @@ function showHeroView() {
   }
   document.querySelectorAll(".chip-pill").forEach((btn) => btn.classList.remove("active-chip"));
   // Reset scroll to top smoothly when returning to overview
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  smoothScrollToPosition(0, 320);
 }
 
 function handleSelectTopic(topicKey, userQueryText) {
@@ -717,14 +768,19 @@ function handleSelectTopic(topicKey, userQueryText) {
 
   const displayText = userQueryText || topicTitles[topicKey] || topicKey;
 
-  // Append user bubble
+  // Clear previous active focus highlights
+  document.querySelectorAll(".newly-focused").forEach((el) => {
+    el.classList.remove("newly-focused");
+  });
+
+  // Append user bubble with newly-focused class
   const userRow = document.createElement("div");
-  userRow.className = "user-msg-row";
+  userRow.className = "user-msg-row newly-focused";
   userRow.innerHTML = `<div class="user-msg-bubble">${displayText}</div>`;
   chatStream.appendChild(userRow);
   
-  // Immediately focus newly selected content
-  focusNewContent(userRow, { offset: 70 });
+  // Immediately bring viewport down to newly asked topic (ChatGPT-style)
+  focusNewContent(userRow, { offset: 65, duration: 400 });
 
   // Typing indicator
   const typingRow = document.createElement("div");
@@ -739,15 +795,14 @@ function handleSelectTopic(topicKey, userQueryText) {
     </div>
   `;
   chatStream.appendChild(typingRow);
-  focusNewContent(userRow, { offset: 70 });
 
-  // Render Bot Card Answer and smoothly keep new response focused
+  // Render Bot Card Answer and lock focus to this new question + response
   setTimeout(() => {
     const activeTyping = document.getElementById("active-typing");
     if (activeTyping) activeTyping.remove();
 
     const botRow = document.createElement("div");
-    botRow.className = "bot-msg-row";
+    botRow.className = "bot-msg-row newly-focused";
 
     if (BOT_TEMPLATES[topicKey]) {
       botRow.innerHTML = BOT_TEMPLATES[topicKey]();
@@ -762,14 +817,13 @@ function handleSelectTopic(topicKey, userQueryText) {
       setTimeout(() => initRealEarthMap(botRow), 100);
     }
 
-    // Smoothly focus the newly opened question and its response card
-    focusNewContent(userRow, { offset: 70 });
-    setTimeout(() => focusNewContent(userRow, { offset: 70 }), 160);
+    // Anchor focus on the new question and answer card so previous cards are scrolled past
+    focusNewContent(userRow, { offset: 65, duration: 460 });
 
-    // If card has images, re-adjust focus once loaded
+    // If card has images, re-verify focus once loaded
     const img = botRow.querySelector("img");
     if (img) {
-      img.onload = () => focusNewContent(userRow, { offset: 70 });
+      img.onload = () => focusNewContent(userRow, { offset: 65, duration: 250 });
     }
   }, 260);
 }
@@ -794,6 +848,8 @@ if (globalChatForm) {
     const query = chatInput.value.trim();
     if (!query) return;
 
+    if (chatInput) chatInput.blur();
+
     const matchedTopic = matchQueryTopic(query);
     if (matchedTopic) {
       handleSelectTopic(matchedTopic, query);
@@ -801,11 +857,20 @@ if (globalChatForm) {
       // General custom question
       showChatView();
 
+      // Clear previous active chips
+      document.querySelectorAll(".chip-pill").forEach((btn) => btn.classList.remove("active-chip"));
+
+      // Clear previous active focus highlights
+      document.querySelectorAll(".newly-focused").forEach((el) => {
+        el.classList.remove("newly-focused");
+      });
+
       const userRow = document.createElement("div");
-      userRow.className = "user-msg-row";
+      userRow.className = "user-msg-row newly-focused";
       userRow.innerHTML = `<div class="user-msg-bubble">${query}</div>`;
       chatStream.appendChild(userRow);
-      focusNewContent(userRow, { offset: 70 });
+      
+      focusNewContent(userRow, { offset: 65, duration: 400 });
 
       const typingRow = document.createElement("div");
       typingRow.className = "bot-msg-row";
@@ -819,19 +884,17 @@ if (globalChatForm) {
         </div>
       `;
       chatStream.appendChild(typingRow);
-      focusNewContent(userRow, { offset: 70 });
 
       setTimeout(() => {
         const activeTyping = document.getElementById("active-typing");
         if (activeTyping) activeTyping.remove();
 
         const botRow = document.createElement("div");
-        botRow.className = "bot-msg-row";
+        botRow.className = "bot-msg-row newly-focused";
         botRow.innerHTML = getGenericAnswer(query);
         chatStream.appendChild(botRow);
         
-        focusNewContent(userRow, { offset: 70 });
-        setTimeout(() => focusNewContent(userRow, { offset: 70 }), 160);
+        focusNewContent(userRow, { offset: 65, duration: 460 });
       }, 260);
     }
 
