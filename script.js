@@ -93,7 +93,6 @@ const BOT_TEMPLATES = {
             <span class="exp-tag">Backend Development</span>
             <span class="exp-tag">REST APIs</span>
             <span class="exp-tag">MySQL</span>
-            <span class="exp-tag">OOP</span>
             <span class="exp-tag">Problem Solving</span>
           </div>
         </div>
