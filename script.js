@@ -98,8 +98,8 @@ const BOT_TEMPLATES = {
           </div>
         </div>
 
-        <!-- Role 2: Data Analyst Intern at Bluestock Fintech (Current) -->
-        <div class="exp-item exp-item-active">
+        <!-- Role 2: Data Analyst Intern at Bluestock Fintech (Completed) -->
+        <div class="exp-item exp-item-completed">
           <div class="exp-item-top">
             <div class="exp-role-group">
               <div class="exp-icon-box exp-icon-fintech">
@@ -115,10 +115,10 @@ const BOT_TEMPLATES = {
               </div>
             </div>
             <div class="exp-badge-period">
-              <span class="status-pill status-active">
-                <span class="pulse-dot-green"></span> Current Role
+              <span class="status-pill status-completed">
+                <span class="pulse-dot-green"></span> Completed Role
               </span>
-              <span class="exp-date-text">Sep 2026 – Present</span>
+              <span class="exp-date-text">Sep 2026 – Oct 2026</span>
             </div>
           </div>
 
