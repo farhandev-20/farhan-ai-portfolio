@@ -115,7 +115,7 @@ const BOT_TEMPLATES = {
             </div>
             <div class="exp-badge-period">
               <span class="status-pill status-completed">
-                <span class="pulse-dot-green"></span> Completed Role
+                <span class="pulse-dot-green"></span> Completed
               </span>
               <span class="exp-date-text">Sep 2026 – Oct 2026</span>
             </div>
