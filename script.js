@@ -139,7 +139,6 @@ const BOT_TEMPLATES = {
             <span class="exp-tag">SQL</span>
             <span class="exp-tag">Data Analysis</span>
             <span class="exp-tag">Financial Analytics</span>
-            <span class="exp-tag">KPI Dashboards</span>
             <span class="exp-tag">Fintech</span>
           </div>
         </div>
